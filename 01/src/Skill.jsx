@@ -1,8 +1,12 @@
-function Skill({ skill_obj }) {
+function Skill({ skill, level, color }) {
   return (
-    <div className="skill" style={{ backgroundColor: skill_obj.color }}>
-      {skill_obj.skill + "  "}
-      {skill_obj.emoji}
+    <div className="skill" style={{ backgroundColor: color }}>
+      <span> {skill + "  "}</span>
+      <span>
+        {level === "advanced" && "💪"}
+        {level === "beginner" && "👶"}
+        {level === "intermediate" && "👍"}
+      </span>
     </div>
   );
 }
